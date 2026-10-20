@@ -14,7 +14,10 @@ ENV \
   # Required for correct Prometheus metrics under gunicorn's multiple worker processes.
   PROMETHEUS_MULTIPROC_DIR=/tmp/prometheus-multiproc
 
-RUN apt-get update && \
+# bullseye is EOL and its packages were moved to the archive
+RUN sed -i -e 's#deb.debian.org/debian #archive.debian.org/debian #' \
+  -e 's#security.debian.org/debian-security#archive.debian.org/debian-security#' /etc/apt/sources.list && \
+  apt-get update && \
   apt-get install -y --no-install-recommends tini postgresql-client && \
   pip install "poetry==1.1.11" && \
   mkdir -p "$PROMETHEUS_MULTIPROC_DIR"
