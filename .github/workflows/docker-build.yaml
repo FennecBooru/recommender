@@ -13,5 +13,5 @@ permissions:
 jobs:
     docker-build:
         runs-on: ubuntu-latest
-        if: github.repository_owner == 'gayfurcity'
-        steps: [uses: gayfurcity/publish-to-ghcr@v1]
+        if: github.repository_owner == 'fennecbooru'
+        steps: [uses: DonovanDMC/publish-to-ghcr@v1]

@@ -1,6 +1,6 @@
 # Recommender
 
-Post recommendation service for [GayFurCity](https://github.com/GayFurCity/GayFurCity).
+Post recommendation service for [Fennec](https://github.com/FennecBooru/Fennec).
 
 # Quickstart
 
